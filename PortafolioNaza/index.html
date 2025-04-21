@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Nazareth</title>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwind.config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+      (function () {
+        emailjs.init("ibxu21gSfkwm8PnD-"); // User ID
+      })();
+  </script>
+
+</head>
+
+<!-- Modal 1: Web Design -->
+<div id="modalService1" class="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999] hidden">
+  <div
+    class="bg-white dark:bg-[#2a004a] text-black dark:text-white rounded-lg shadow-xl max-w-lg w-[90%] p-6 relative font-Ovo">
+    <button
+      class="closeModal absolute top-3 right-4 text-xl font-bold text-gray-500 hover:text-red-500">&times;</button>
+    <h2 class="text-2xl font-bold mb-4">More About Web Design</h2>
+    <p class="leading-6">
+      I specialize in web design and frontend development, creating functional and visually appealing websites. My
+      expertise lies in building responsive, accessible, and user-friendly sites that deliver a seamless user experience
+    </p>
+  </div>
+</div>
+
+<!-- Modal 2: UI/UX Design -->
+<div id="modalService2" class="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999] hidden">
+  <div
+    class="bg-white dark:bg-[#2a004a] text-black dark:text-white rounded-lg shadow-xl max-w-lg w-[90%] p-6 relative font-Ovo">
+    <button
+      class="closeModal absolute top-3 right-4 text-xl font-bold text-gray-500 hover:text-red-500">&times;</button>
+    <h2 class="text-2xl font-bold mb-4">More About UI/UX Design</h2>
+    <p class="leading-6">
+      I specialize in UI/UX design, focusing on crafting seamless and user-centric interfaces. My work ensures that
+      websites and applications are intuitive, responsive, and optimized for an exceptional user experience </p>
+  </div>
+</div>
+
+
+<body class="overflow-x-hidden font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
+
+  <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]
+    dark:hidden">
+    <img src="imagenes/header-bg-color.png" alt="" class="w-full">
+  </div>
+
+  <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 bg-transparent">
+    <a href="#top">
+      <img src="imagenes/logoinsible.png" alt="Logo" class="w-28 cursor-pointer mr-14 dark:hidden">
+      <img src="imagenes/darklogo.png" alt="Logo" class="w-28 cursor-pointer mr-14 hidden dark:block">
+
+
+      <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo
+        dark:border dark:border-white/50 dark:bg-transparent">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#contact">Contact me</a></li>
+      </ul>
+
+      <div class="flex items-center gap-4">
+        <button onclick="toggleTheme()">
+          <img src="./imagenes/moon_icon.png" alt="" class=" w-6 dark:hidden">
+          <img src="./imagenes/sun_icon.png" alt="" class=" w-6 hidden dark:block">
+
+        </button>
+
+        <button class="block md:hidden ml-3 dark:white/50" onclick="openMenu()">
+          <img src="./imagenes/menu-black.png" alt="" class="w-6 dark:hidden">
+          <img src="./imagenes/menu-white.png" alt="" class="w-6 hidden dark:block">
+
+        </button>
+
+        <!---Mobile menu-->
+        <ul id="sideMenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed 
+            -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 
+                transition duration-500 font-Ovo dark:bg-[#2a004a] dark:text-white">
+
+          <div class="absolute right-6 top-6" onclick="closeMenu()">
+            <img src="./imagenes/close-black.png" alt="" class="w-6 cursor-pointer">
+          </div>
+
+          <li><a href="#top" onclick="closeMenu()">Home</a></li>
+          <li><a href="#about" onclick="closeMenu()">About me</a></li>
+          <li><a href="#services" onclick="closeMenu()">Services</a></li>
+          <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+          <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+          <li><a href="#education" onclick="closeMenu()">Education</a></li>
+          <li><a href="#work" onclick="closeMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="closeMenu()">Contact me</a></li>
+        </ul>
+      </div>
+  </nav>
+
+  <!--Header-->
+  <div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col
+    items-center justify-center gap-4">
+    <img src="./imagenes/profiles.png" alt="" class="rounded-full w-32">
+    <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
+      Hi! I'm Nazareth Gómez <img src="./imagenes/hand-icon.png" alt="" class="w-6"></h3>
+    <h1 class="text-3xl sm:text-6xl lg:;text-[66px] font-Ovo">Systems Engineer</h1>
+    <p class="max-w-2xl mx-auto font-Ovo">I am a Systems Engineering student at the National University of Costa Rica. I
+      am
+      passionate about technology and software development,
+      and I seek to grow professionally to add value to innovative projects.</p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
+      <!-- Botón: Contact me -->
+      <a href="#contact"
+        class="px-8 py-3 bg-[#fddee3] text-black rounded-full flex items-center gap-2 hover:bg-[#fddee3]/80 transition-colors">
+        Contact me
+        <img src="./imagenes/right-arrow.png" alt="Arrow" class="w-4 h-3 dark:brightness-200 dark:invert">
+      </a>
+
+      <!-- Botón: Download CV -->
+      <a href="./imagenes/CV-Nazareth.pdf" download="NazarethGomez_CV"
+        class="px-8 py-3 border border-gray-300 dark:border-gray-700 rounded-full flex items-center gap-2 hover:bg-[#fddee3]/10 transition-colors">
+        Download CV
+        <img src="./imagenes/download-icon.png" alt="Download" class="w-4 h-4 dark:invert">
+      </a>
+    </div>
+
+  </div>
+  <!---About me-->
+  <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
+    <h4 class="text-center mb-2 text-lg font-Ovo">Introduction</h4>
+    <h2 class="text-center text-5xl font-Ovo">About me</h2>
+
+    <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+      <div class="max-w-max mx-auto relative">
+        <img src="./imagenes/profile-uno.png" alt="" class="w-64 sm:w-80 rounded-3xl max-w-none">
+
+        <div
+          class="bg-white w-1/2 aspect-square absolute right-0 bottom-0
+rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0,15)] flex items-center justify-center">
+          <img src="./imagenes/circular-text.png" alt="" class="w-full animate-spin_slow">
+          <img src="./imagenes/icon-dev.png" alt=""
+            class="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+
+        </div>
+
+
+      </div>
+      <div class="flex-1">
+        <p class="mb-10 max-w-2xl font-Ovo"> I am experience frontend and backend development,
+          and I am passionate about creating attractive and functional web interfaces.
+          always aiming to enhance user experience and deliver innovative solutions. </p>
+
+        <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2x1">
+          <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer
+            hover:bg-[#lightHover] hover:-translate-y-1 duration-500
+            hover:shadow-[black]">
+            <img src="./imagenes/code-icon.png" alt="" class="dark:brightness-200 w-7 mt-3">
+            <h3 class="dark:text-white my-4 font-semibold text-gray-700"> Programming</h3>
+            <p class="dark:text-white text-gray-600 text-sm">HTML, CSS, JavaScript, React, TypeScript, C#, Nest.js,
+              Node.js, </p>
+          </li>
+
+          <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer
+            hover:bg-[#lightHover] hover:-translate-y-1 duration-500
+            hover:shadow-[black]">
+            <img src="./imagenes/edu-icon.png" alt="" class="dark:brightness-200 w-7 mt-3">
+            <h3 class="dark:text-white my-4 font-semibold text-gray-700"> Education</h3>
+            <p class="dark:text-white text-gray-600 text-sm">Diploma in Computer Application Programming from the
+              National
+              University of Costa Rica</p>
+          </li>
+
+          <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer
+            hover:bg-[#lightHover] hover:-translate-y-1 duration-500
+            hover:shadow-[black]">
+            <img src="./imagenes/project-icon.png" alt="" class="dark:brightness-200 w-7 mt-3">
+            <h3 class="dark:text-white my-4 font-semibold text-gray-700"> projects</h3>
+            <p class="dark:text-white text-gray-600 text-sm"> Web system for Nicoya Library, offering admin features and
+              user access to information.
+
+            </p>
+          </li>
+        </ul>
+
+        <h4 class="dark:text-white my-6 text-gray-700 font-Ovo">Tools I use</h4>
+
+        <ul class="flex items-center gap-3 sm:gap-5">
+          <li class="flex items-center justify-center w-12 sm:w-14
+            aspect-square border border-gray-400 rounded-lg cursor-pointer
+            hover:-translate-y-1 duration-500">
+            <img src="./imagenes/vscode.png" alt="" class="w-5 sm:2-7">
+          </li>
+
+          <li class="flex items-center justify-center w-12 sm:w-14
+    aspect-square border border-gray-400 rounded-lg cursor-pointer
+    hover:-translate-y-1 duration-500">
+            <img src="./imagenes/figma.png" alt="" class="w-5 sm:2-7">
+          </li>
+
+          <li class="flex items-center justify-center w-12 sm:w-14
+aspect-square border border-gray-400 rounded-lg cursor-pointer
+hover:-translate-y-1 duration-500">
+            <img src="./imagenes/git.png" alt="" class="w-5 sm:2-7">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Services-->
+
+  <div id="services" class="w-full px-[12%] py-10 scroll-mt-20">
+    <h4 class="text-center mb-2 text-lg font-Ovo">What I Offer</h4>
+    <h2 class="text-center text-5xl font-Ovo">My Services</h2>
+    <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo"> I offer web development, covering both frontend and
+      backend
+      to deliver complete and customized solutions.</p>
+    <div class="grid grid-cols-auto gap-6 my-10">
+      <div class="border border-gray-400 rounded-lg px-8 py-12 
+        hover:shadow-[black] cursor-pointer hover:bg-[#lightHover]
+        hover:-translate-y-1 duration-500">
+        <img src="./imagenes/globe.png" alt="" class="w-10 dark:invert">
+        <h3 class="dark:text-white text-lg my-4 text-gray-700">Web Design</h3>
+        <p class="dark:text-white text-sm text-gray-600 leading-5"> I create functional and visually appealing websites,
+          ensuring they are responsive,
+          accessible, and user-friendly.</p>
+        <!-- Botón para Web Design -->
+        <a href="#" class="readMoreBtn flex items-center gap-2 text-sm mt-5" data-modal="modalService1">
+          Read more <img src="./imagenes/right-arrow-dos.png" alt="" class="w-4">
+        </a>
+
+      </div>
+
+      <div class="border border-gray-400 rounded-lg px-8 py-12 
+            hover:shadow-[black] cursor-pointer hover:bg-[#lightHover]
+            hover:-translate-y-1 duration-500">
+        <img src="./imagenes/design.png" alt="" class="w-10 dark:invert">
+        <h3 class="dark:text-white text-lg my-4 text-gray-700">UI / UX Desing</h3>
+        <p class="dark:text-white text-sm text-gray-600 leading-5">I design intuitive interfaces, optimizing the user
+          experience for smooth and enjoyable navigation.</p>
+        <!-- Botón para UI/UX Design -->
+        <a href="#" class="readMoreBtn flex items-center gap-2 text-sm mt-5" data-modal="modalService2">
+          Read more <img src="./imagenes/right-arrow-dos.png " alt="" class="w-4">
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills & Languages -->
+  <section id="skills" class="py-20 px-[12%] bg-gray dark:bg-[#11001F] scroll-mt-20 ">
+    <div class="text-center mb-12">
+      <h3 class="text-lg  text-gray-600 mb-2 font-Ovo dark:text-white">My Abilities</h3>
+      <h2 class="text-3xl md:text-5xl font-Ovo">Skills and Languages</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 ">
+      <!-- Technical Skills -->
+      <div>
+        <h3 class="text-xl font-semibold mb-6 font-Ovo text-gray-800 dark:text-white">Technical Skills</h3>
+        <div class="space-y-4">
+          <!-- Aquí cada habilidad -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span>HTML/CSS</span><span>80%</span>
+            </div>
+            <div class="h-2 bg-gray-200 rounded-full">
+              <div class="h-2 bg-[#fddee3] rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <!-- Más skills... -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span>JavaScript/TypeScript</span><span>80%</span>
+            </div>
+            <div class="h-2 bg-gray-200 rounded-full">
+              <div class="h-2 bg-[#fddee3] rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-1">
+              <span>React/Next.js</span><span>75%</span>
+            </div>
+            <div class="h-2 bg-gray-200 rounded-full">
+              <div class="h-2 bg-[#fddee3] rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-1">
+              <span>Node.js/Express</span><span>75%</span>
+            </div>
+            <div class="h-2 bg-gray-200 rounded-full">
+              <div class="h-2 bg-[#fddee3] rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-1">
+              <span>C#</span><span>75%</span>
+            </div>
+            <div class="h-2 bg-gray-200 rounded-full">
+              <div class="h-2 bg-[#fddee3] rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div>
+        <h3 class="text-xl font-semibold mb-6 font-Ovo text-gray-800 dark:text-white">Languages</h3>
+        <div class="space-y-6 md:mt-14">
+          <div class="p-4 border border-gray-400 rounded-lg">
+            <h4 class="font-semibold dark:text-white">Spanish</h4>
+            <p class=" text-gray-600 dark:text-white">Native</p>
+          </div>
+          <div class="p-4 border border-gray-400 rounded-lg">
+            <h4 class="font-semibold">English</h4>
+            <p class=" text-gray-600 dark:text-white"> Intermediate english</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Work Experience -->
+  <section id="experience" class="py-20 px-[12%] bg-white dark:bg-[#11001F] scroll-mt-20">
+    <div class="text-center mb-12">
+      <h3 class="text-lg  text-gray-600 mb-2 font-Ovo dark:text-white">Career Path</h3>
+      <h2 class="text-3xl md:text-5xl font-Ovo">Work Experience</h2>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-6 justify-center items-stretch">
+      <!-- Card 1 -->
+      <div class="flex-1 border border-gray-400 rounded-lg p-6 shadow-md bg-white dark:bg-[#11001F]">
+        <h4 class="font-semibold text-xl mb-1 dark:text-white">Quality Assurance Engineer(QA)</h4>
+        <p class=" text-gray-600 dark:text-white">ADSA Company • 2019 - 2020</p>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">
+          I worked at ADSA as a QA, performing comprehensive testing on applications to detect bugs and validate both
+          system functionality and usability.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flex-1 border border-gray-400 rounded-lg p-6 shadow-md bg-white dark:bg-[#11001F]">
+        <h4 class="font-semibold text-xl mb-1 dark:text-white">Frontend Developer Intern</h4>
+        <p class=" text-gray-600 dark:text-white">Nicoya Library • 2024 - 2025</p>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">
+          I worked as a frontend developer, creating an informative and administrative web system for the Nicoya library
+          to optimize the services offered.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Timeline -->
+  <section id="education" class="py-20">
+    <div class="text-center mb-16">
+      <h3 class="text-lg text-gray-600 mb-2 font-Ovo dark:text-white">My Formation</h3>
+      <h2 class="text-3xl md:text-5xl font-Ovo">Education</h2>
+    </div>
+    <div class="relative max-w-3xl mx-auto">
+      <div class="border-l-2 border-gray-300 dark:border-gray-600 absolute left-1/2 transform -translate-x-1/2 h-full">
+      </div>
+
+      <!-- Item 1 (Right) -->
+      <div class="mb-10 flex justify-start">
+        <div class="w-1/2 pr-8 text-right hidden sm:block"></div>
+        <div class="w-1/2 pl-8">
+          <div class="relative">
+            <div
+              class="w-5 h-5 bg-[#fddee3] rounded-full absolute -left-10 top-1.5 border-2 border-white dark:border-gray-800">
+            </div>
+            <h3 class="text-lg font-semibold font-Ovo text-gray-800 dark:text-white">CCNA 1 ROUTING AND SWITCHING:
+              INTRODUCTION TO REDES</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">National University of Costa Rica • 2019</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 (Left) -->
+      <div class="mb-10 flex justify-end">
+        <div class="w-1/2 pr-8">
+          <div class="relative text-right">
+            <div
+              class="w-5 h-5 bg-[#fddee3] rounded-full absolute -right-10 top-1.5 border-2 border-white dark:border-gray-800">
+            </div>
+            <h3 class="text-lg font-semibold font-Ovo text-gray-800 dark:text-white">INTERMEDIATE ENGLISH</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">INA • 2022</p>
+          </div>
+        </div>
+        <div class="w-1/2 pl-8 hidden sm:block"></div>
+      </div>
+
+      <!-- Item 3 (Right) -->
+      <div class="mb-10 flex justify-start">
+        <div class="w-1/2 pr-8 text-right hidden sm:block"></div>
+        <div class="w-1/2 pl-8">
+          <div class="relative">
+            <div
+              class="w-5 h-5 bg-[#fddee3] rounded-full absolute -left-10 top-1.5 border-2 border-white dark:border-gray-800">
+            </div>
+            <h3 class="text-lg font-semibold font-Ovo text-gray-800 dark:text-white">SYSTEMS ENGINEERING DIPLOMA DEGREE
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Universidad Nacional de Costa Rica • 2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 (Left) -->
+      <div class="mb-10 flex justify-end">
+        <div class="w-1/2 pr-8">
+          <div class="relative text-right">
+            <div
+              class="w-5 h-5 bg-[#fddee3] rounded-full absolute -right-10 top-1.5 border-2 border-white dark:border-gray-800">
+            </div>
+            <h3 class="text-lg font-semibold font-Ovo text-gray-800 dark:text-white">CERTIFICATE IN THE AGILE SCRUM
+              METHODOLOGY.</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">UNA • 2024</p>
+          </div>
+        </div>
+        <div class="w-1/2 pl-8 hidden sm:block"></div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!--My Work-->
+  <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
+    <h4 class="text-center mb-2 text-lg font-Ovo">My Portfolio</h4>
+    <h2 class="text-center text-5xl font-Ovo">Projects</h2>
+    <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+      I have worked on various projects, both personal and professional, to develop my skills and knowledge in web
+      development.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8 my-10">
+      <!-- Card Proyecto 1 -->
+      <div
+        class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-transform transform hover:scale-[1.02] bg-white dark:bg-darkTheme">
+        <div class="aspect-square bg-[url('./imagenes/front1.png')] bg-no-repeat bg-cover bg-center"></div>
+        <div class="p-4">
+          <p class="text-gray-800 dark:text-white text-sm font-Ovo mb-4">
+            Online courses is a web app where you can explore courses, add them to your cart, and manage them as you
+            like.
+          </p>
+          <a href="Projects/projects1.html"
+            class="inline-block px-4 py-2 bg-[#fddee3] text-sm rounded-full text-black hover:bg-[#fddee3]/80 transition-colors font-Ovo">
+            Read More
+          </a>
+        </div>
+      </div>
+
+      <!-- Card Proyecto 2 -->
+      <div
+        class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-transform transform hover:scale-[1.02] bg-white dark:bg-darkTheme">
+        <div class="aspect-square bg-[url('./imagenes/front.png')] bg-no-repeat bg-cover bg-center"></div>
+        <div class="p-4">
+          <p class="text-gray-800 dark:text-white text-sm font-Ovo mb-4">
+            Hogar de Libros is a web app for the Nicoya Library to manage book, events, notices, and programs
+            efficiently.
+          </p>
+          <a href="Projects/projects2.html"
+            class="inline-block px-4 py-2 bg-[#fddee3] text-sm rounded-full text-black hover:bg-[#fddee3]/80 transition-colors font-Ovo">
+            Read More
+          </a>
+        </div>
+      </div>
+
+      <!-- Card Proyecto 3 -->
+      <div
+        class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-transform transform hover:scale-[1.02] bg-white dark:bg-darkTheme">
+        <div class="aspect-square bg-[url('./imagenes/clinic.png')] bg-no-repeat bg-cover bg-center"></div>
+        <div class="p-4">
+          <p class="text-gray-800 dark:text-white text-sm font-Ovo mb-4">
+            Grey's clinic: React-based clinic app with auth. Manages appointments with role-based access and business
+            rules.
+
+          </p>
+          <a href="Projects/projects3.html"
+            class="inline-block px-4 py-2 bg-[#fddee3] text-sm rounded-full text-black hover:bg-[#fddee3]/80 transition-colors font-Ovo">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Contact Me -->
+  <section id="contact" class="py-20 px-[12%] scroll-mt-20 bg-white dark:bg-[#11001F]">
+    <div class="text-center mb-12">
+      <h3 class="text-lg text-gray-600 mb-2 font-Ovo dark:text-white">Get in touch</h3>
+      <h2 class="text-3xl md:text-5xl mb-4 font-Ovo">Contact Me</h2>
+      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-Ovo">
+        I am available for freelance work. Connect with me via email or social media.
+      </p>
+    </div>
+
+    <div class="max-w-2xl mx-auto">
+      <!-- Social Links -->
+      <div class="flex justify-center gap-6 mb-10">
+        <a href="https://github.com/Nazagomez" target="_blank" rel="noopener noreferrer"
+          class="p-3 rounded-full border border-gray-400 hover:bg-[#fddee3]/10 transition-colors">
+          <img src="./imagenes/github.png" alt="GitHub" class="w-6 h-6 dark:invert">
+        </a>
+        <a href="https://linkedin.com/in/nazareth-gomez-gomez-53b0a835a/" target="_blank" rel="noopener noreferrer"
+          class="p-3 rounded-full border border-gray-400 hover:bg-[#fddee3]/10 transition-colors">
+          <img src="./imagenes/linkedin.png" alt="LinkedIn" class="w-6 h-6 dark:invert">
+        </a>
+        <a href="mailto:nazigomez18@gmail.com"
+          class="p-3 rounded-full border border-gray-400 hover:bg-[#fddee3]/10 transition-colors">
+          <img src="./imagenes/correo.png" alt="Mail" class="w-6 h-6 dark:invert">
+        </a>
+      </div>
+
+
+      <!-- Contenedor para mensajes -->
+      <div id="form-mensaje" class="text-center mb-4"></div>
+
+      <!-- Contact Form -->
+      <form id="contact-form" class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <input type="text" name="name" id="name" placeholder="Your Name"
+            class="w-full p-3 rounded-lg border border-gray-400 dark:bg-[#170322] focus:ring-2 focus:ring-[#fddee3] outline-none"
+            required />
+
+          <input type="email" name="user_email" id="user_email" placeholder="Your Email"
+            class="w-full p-3 rounded-lg border border-gray-400 dark:bg-[#170322] focus:ring-2 focus:ring-[#fddee3] outline-none"
+            required />
+        </div>
+
+        <textarea name="message" id="message" rows="6" placeholder="Your Message"
+          class="w-full p-3 rounded-lg border border-gray-400 dark:bg-[#170322] focus:ring-2 focus:ring-[#fddee3] outline-none"
+          required></textarea>
+
+        <button type="submit"
+          class="w-full py-3 bg-[#fddee3] text-black rounded-lg hover:bg-[#fddee3]/80 transition-colors flex items-center justify-center gap-2">
+          Send Message
+          <img src="./imagenes/send-icon.png" alt="Send" class="w-4 h-4 " />
+        </button>
+      </form>
+
+
+      <!-- Footer -->
+      <footer class="py-8 text-center border-t border-gray-400">
+        <p class="text-gray-600 dark:text-gray-300 font-Ovo">
+          © 2025 Nazareth Gómez. All rights reserved.
+        </p>
+      </footer>
+      <script src="./script.js"></script>
+</body>
+
+</html>

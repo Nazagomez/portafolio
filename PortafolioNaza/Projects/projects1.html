@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project 1 - Nazareth Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="">
+  <!-- Header -->
+  <header class="px-6 py-4 flex justify-between items-center border-b border-gray-300">
+    <a href="../index.html#work" class="text-sm hover:underline font-Ovo flex items-center gap-2">
+      &#8592; Back to Portfolio
+    </a>
+    <button onclick="toggleTheme()"
+      class="bg-[#fddee3] text-black px-4 py-2 rounded-full shadow hover:bg-[#fddee3]/80 transition flex items-center gap-2">
+      <img src="../imagenes/moon_icon.png" alt="Toggle Theme" class="w-4 h-4 dark:hidden">
+      <img src="../imagenes/sun_icon.png" alt="Toggle Theme" class="w-4 h-4 hidden dark:block">
+    </button>
+  </header>
+
+  <!-- Project Content -->
+  <main class="max-w-4xl mx-auto px-6 py-10 ">
+    <img src="../imagenes/front1.png" alt="Project 1" class="rounded-lg shadow-lg mb-8 w-full object-cover" />
+
+    <h2 class="text-3xl font-bold mb-4 font-Ovo">online courses</h2>
+    <p class="mb-6 font-Ovo">
+      Online courses is a modern web application that allows you to easily explore a catalog of courses, add your
+      favorites to the cart,
+      and remove them whenever you like. Built using web development tools and best practices,
+      the platform is fully responsive—designed to work smoothly on any device. Easy, fast, and crafted with you in
+      mind!
+    </p>
+
+    <h3 class="text-xl font-semibold mb-2 font-Ovo">Tools & Technologies</h3>
+    <ul class="list-disc list-inside mb-6 font-Ovo">
+      <li>JavaScript</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Responsive Design</li>
+    </ul>
+
+    <div class="flex flex-wrap gap-4 mt-4">
+      <a href="https://universidadonlinenaza.netlify.app/" target="_blank"
+        class="px-6 py-3 bg-[#fddee3] text-black rounded-full hover:bg-[#fddee3]/80 transition-colors font-Ovo">
+        View Demo
+      </a>
+      <a href="https://github.com/Nazagomez/E-commerce" target="_blank"
+        class="px-6 py-3 border border-[#fddee3] rounded-full hover:bg-[#fddee3]/10 transition-colors font-Ovo">
+        View on GitHub
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-20 py-6 text-center border-t border-gray-300 font-Ovo">
+    <p class="">&copy; 2025 Nazareth Gómez. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      if (isDark) {
+        html.classList.remove('dark');
+        document.body.classList.remove('dark:bg-[#170322]', 'dark:text-white');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        document.body.classList.add('dark:bg-[#170322]', 'dark:text-white');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (
+      localStorage.getItem('theme') === 'dark' ||
+      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+      document.body.classList.add('dark:bg-[#170322]', 'dark:text-white');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark:bg-[#170322]', 'dark:text-white');
+    }
+  </script>
+</body>
+
+</html>
