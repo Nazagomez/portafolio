@@ -1,5 +1,4 @@
 # portafolio
-Portafolio de proyectos 
 Este proyecto es un sitio web de portafolio que muestra información sobre Nazareth Gómez: su perfil, habilidades, servicios ofrecidos, experiencia, educación, proyectos y un formulario de contacto. Incluye modo oscuro/claro, navegación suave y efectos interactivos.
 
 # Características principales
@@ -31,12 +30,9 @@ EmailJS para envío de correos desde el formulario
 Tailwind Config personalizado (scripts y tailwind.config.js)
 
  # Instalación y uso local
- git clone https://github.com/Nazagomez/portafolio.git
-cd portafolio
-Abrir el proyecto
-Con Live Server de VS Code u otro servidor local: abre index.html,
+ colna el repositorio: git clone https://github.com/Nazagomez/portafolio.git
+luego al abrir el proyecto puedes hacerlo con Live Server de VS Code u otro servidor local: abre index.html,
 O simplemente haz doble clic en index.html para verlo en tu navegador.
 
-Configurar EmailJS
-Actualiza tu user ID y credenciales en <script> dentro de index.html.
-Crea un servicio y plantilla en EmailJS y copia sus IDs en script.js.
+y para configurar EmailJS debes de actualizar tu user ID y credenciales en <script> dentro de index.html.
+Y crea un servicio y plantilla en EmailJS y copia sus IDs en script.js. Para que el proyecto funcione con tus datos.
