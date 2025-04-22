@@ -1,5 +1,5 @@
 # portafolio
-Este proyecto es un sitio web de portafolio que muestra información sobre Nazareth Gómez: su perfil, habilidades, servicios ofrecidos, experiencia, educación, proyectos y un formulario de contacto. Incluye modo oscuro/claro, navegación suave y efectos interactivos.
+Este proyecto es un sitio web de portafolio que muestra información : de perfil, habilidades, servicios ofrecidos, experiencia, educación, proyectos y un formulario de contacto. Incluye modo oscuro/claro, navegación suave y efectos interactivos.
 
 # Características principales
 
@@ -30,7 +30,7 @@ EmailJS para envío de correos desde el formulario
 Tailwind Config personalizado (scripts y tailwind.config.js)
 
  # Instalación y uso local
- colna el repositorio: git clone https://github.com/Nazagomez/portafolio.git
+ clona el repositorio: git clone https://github.com/Nazagomez/portafolio.git
 luego al abrir el proyecto puedes hacerlo con Live Server de VS Code u otro servidor local: abre index.html,
 O simplemente haz doble clic en index.html para verlo en tu navegador.
 
